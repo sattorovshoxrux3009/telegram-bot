@@ -1,5 +1,19 @@
 const TelegramBot = require('node-telegram-bot-api');
+
 const port = process.env.PORT || 4000;
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+
 const token = '7616988037:AAEv5iazl79YRZeH_VO7r1qptFqXb33pRFk';
 const bot = new TelegramBot(token, { polling: true });
 
